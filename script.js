@@ -9,7 +9,19 @@ function convertToRoman(num) {
       6:['I', 1]
     };
 
-  //your code here
+    let result = '';
+
+    for (let i = 0; i < 7; i++) {
+        let [symbol, value] = obj[i]; // Destructure the array
+        while (num >= value) {
+            result += symbol; // Append corresponding Roman numeral
+            num -= value;     // Reduce number
+        }
+    }
+
+    return result;
+
+  
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
